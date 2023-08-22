@@ -1,0 +1,7 @@
+1. Đối vói CSS:
+ - Nên được link vào thẻ head, vì đối với những website cần load nội dung nhanh nhất có thể, 
+ người dùng có thể cần nhìn thấy giao diện trực quan, mang đến trải nghiệm tốt cho người dùng
+
+2. Đối với Javascript:
+- Nên được link vào vị trí trên thẻ đóng của body </body>. Vì đối với những file js cần tương tác với DOM
+thì file HTML nên được fetch trước để DOM được hình thành. Khi đó JS mới có thể tương tác và query với DOM.

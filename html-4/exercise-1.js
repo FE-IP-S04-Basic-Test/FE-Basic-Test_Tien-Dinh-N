@@ -54,11 +54,18 @@ const ices = [
 
 const addToCart = (productData) => {
   const cartStorage = JSON.parse(localStorage.getItem('product')) || [];
-  cartStorage.push({
-    ...productData,
+  const existedProduct = cartStorage.find((product) => {
+    return product.id === productData.id;
   });
-  console.log(cartStorage)
+  if (existedProduct) {
+    existedProduct.quantity += 1;
+  } else {
+    cartStorage.push({
+      ...productData,
+    });
+  }
   localStorage.setItem('product', JSON.stringify(cartStorage));
+  console.log(cartStorage);
 };
 
 const data = {
